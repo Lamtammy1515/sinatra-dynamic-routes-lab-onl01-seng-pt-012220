@@ -25,14 +25,15 @@ class App < Sinatra::Base
     @number1 = params[:number1].to_i 
     @number2 = params[:number2].to_i
     
-    if operation == "multiply"
+    if params[:operation] == "multiply"
       answer = @number1 * @number2 
-    elsif operation == "add" 
+    elsif  params[:operation] == "add" 
       answer = @number1 + @number2 
-    elsif operation == "subtract"
+    elsif  params[:operation] == "subtract"
       answer = @number1 - @number2
-    elsif operation == "divide"
+    elsif  params[:operation] == "divide"
       answer = @number1 / @number2
     end 
+    answer.to_s
   end 
 end
